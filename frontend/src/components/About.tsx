@@ -1,8 +1,7 @@
 import { Terminal } from "./Terminal";
 
 const STATS = [
-  { value: "5+", label: "YEARS" },
-  { value: "40+", label: "APIS SHIPPED" },
+  { value: "40+", label: "MINI PROJECTS" },
   { value: "99.9%", label: "UPTIME" },
   { value: "∞", label: "COFFEE" },
 ];
@@ -19,10 +18,10 @@ export function About() {
           <pre className="whitespace-pre-wrap font-mono text-base leading-snug text-neon/90 sm:text-lg">
 {`$ ./identify --me
 
-name     : [YOUR NAME]
+name     : Lawko
 role     : Backend Engineer
-location : [CITY, COUNTRY]
-status   : [ ] open to work
+location : Sulaymaniyah, Iraq
+status   : open to work
 
 I build the invisible parts —
 the APIs, the queues, the

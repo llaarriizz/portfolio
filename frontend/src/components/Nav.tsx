@@ -14,7 +14,7 @@ export function Nav() {
           href="#home"
           className="font-pixel text-[10px] text-neon text-glow sm:text-xs"
         >
-          [YOUR_NAME]
+          Lawko_Mohammad
         </a>
         <ul className="flex gap-3 font-pixel text-[8px] sm:gap-6 sm:text-[10px]">
           {LINKS.map((link) => (
