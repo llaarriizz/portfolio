@@ -1,12 +1,16 @@
-type Skill = { name: string; level: number; color: string };
+type Category = {
+  title: string;
+  accent: string;
+  fill: string;
+  skills: string[];
+};
 
-const SKILLS: Skill[] = [
-  { name: "GO", level: 95, color: "bg-neon" },
-  { name: "POSTGRESQL", level: 90, color: "bg-cyan" },
-  { name: "DOCKER / K8S", level: 80, color: "bg-magenta" },
-  { name: "REDIS", level: 85, color: "bg-amber" },
-  { name: "gRPC / REST", level: 92, color: "bg-neon" },
-  { name: "LINUX", level: 88, color: "bg-cyan" },
+const CATEGORIES: Category[] = [
+  { title: "LANGUAGES", accent: "text-neon", fill: "hover:bg-neon", skills: ["GO", "PYTHON", "RUST", "C", "C++", "JAVA"] },
+  { title: "TOOLS AND PLATFORMS", accent: "text-amber", fill: "hover:bg-amber", skills: ["GIT", "GITHUB", "DOCKER", "LINUX", "POSTMAN"] },
+  { title: "DATABASES", accent: "text-cyan", fill: "hover:bg-cyan", skills: ["POSTGRESQL", "MySQL", "MongoDB", "REDIS"] },
+  { title: "FRONTEND", accent: "text-magenta", fill: "hover:bg-magenta", skills: ["REACT", "NEXT.JS", "TAILWIND CSS"] },
+  { title: "BACKEND", accent: "text-purple", fill: "hover:bg-purple", skills: ["NODE.JS", "EXPRESS.JS", "FASTAPI", "AXUM", "net/http FOR GO"] },
 ];
 
 export function Skills() {
@@ -16,18 +20,28 @@ export function Skills() {
         &gt; SKILL_TREE
       </h2>
 
-      <div className="grid gap-6 sm:grid-cols-2">
-        {SKILLS.map((skill) => (
-          <div key={skill.name}>
-            <div className="mb-2 flex items-end justify-between font-pixel text-[9px] sm:text-[11px]">
-              <span className="text-fg">{skill.name}</span>
-              <span className="text-neon/70">LV {skill.level}</span>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {CATEGORIES.map((category) => (
+          <div
+            key={category.title}
+            className={`pixel-frame bg-panel/70 p-5 ${category.accent}`}
+          >
+            <div className="mb-4 flex items-center gap-2">
+              <span className="h-2 w-2 bg-current" />
+              <h3 className="font-pixel text-[10px] text-fg sm:text-xs">
+                {category.title}
+              </h3>
             </div>
-            <div className="h-4 border-2 border-neon/50 bg-void p-0.5">
-              <div
-                className={`h-full ${skill.color} transition-[width] duration-1000`}
-                style={{ width: `${skill.level}%` }}
-              />
+
+            <div className="flex flex-wrap gap-2">
+              {category.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className={`border-2 border-current bg-void px-3 py-2 font-pixel text-[9px] transition-colors hover:text-void ${category.fill}`}
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
         ))}

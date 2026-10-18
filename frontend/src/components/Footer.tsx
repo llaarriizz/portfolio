@@ -1,5 +1,3 @@
-const YEAR = new Date().getFullYear();
-
 export function Footer() {
   return (
     <footer className="relative z-10 border-t-2 border-neon/30 py-8 text-center">
