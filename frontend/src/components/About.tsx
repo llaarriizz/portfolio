@@ -3,7 +3,7 @@ import { Terminal } from "./Terminal";
 const STATS = [
   { value: "40+", label: "MINI PROJECTS" },
   { value: "99.9%", label: "UPTIME" },
-  { value: "∞", label: "COFFEE" },
+  { value: "20", label: "AGE" },
 ];
 
 export function About() {

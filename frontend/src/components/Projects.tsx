@@ -8,12 +8,12 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    title: "PAYMENT GATEWAY",
-    tag: "FINTECH",
+    title: "REBECCA",
+    tag: "PROGRAMING LANGUAGE",
     description:
-      "Idempotent transaction service handling thousands of payments per second with exactly-once delivery.",
-    stack: ["Go", "Postgres", "Kafka"],
-    href: "#",
+      "A statically typed, interpreted programing language with a focus on learning and more in depth understanding of programming concepts.",
+    stack: ["RUST", "LOGOS"],
+    href: "https://github.com/llaarriizz/rebecca",
   },
   {
     title: "REALTIME CHAT API",
@@ -41,39 +41,62 @@ export function Projects() {
       </h2>
 
       <div className="grid gap-6 md:grid-cols-3">
-        {PROJECTS.map((project) => (
-          <a
-            key={project.title}
-            href={project.href}
-            className="pixel-frame group flex flex-col gap-3 bg-panel/80 p-5 text-neon transition-transform duration-150 hover:-translate-y-2"
-          >
-            <div className="flex items-center justify-between">
-              <span className="font-pixel text-[8px] text-magenta">
-                {project.tag}
-              </span>
-              <span className="font-pixel text-[10px] text-amber">★</span>
-            </div>
-            <h3 className="font-pixel text-[11px] leading-relaxed text-neon text-glow sm:text-xs">
-              {project.title}
-            </h3>
-            <p className="flex-1 font-mono text-base leading-snug text-fg/70">
-              {project.description}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {project.stack.map((tech) => (
-                <span
-                  key={tech}
-                  className="border border-cyan/50 px-2 py-1 font-pixel text-[7px] text-cyan"
-                >
-                  {tech}
+        {PROJECTS.map((project) => {
+          const cardClass =
+            "pixel-frame group flex flex-col gap-3 bg-panel/80 p-5 text-neon transition-transform duration-150 hover:-translate-y-2";
+
+          const content = (
+            <>
+              <div className="flex items-center justify-between">
+                <span className="font-pixel text-[8px] text-magenta">
+                  {project.tag}
                 </span>
-              ))}
+                <span className="font-pixel text-[10px] text-amber">★</span>
+              </div>
+              <h3 className="font-pixel text-[11px] leading-relaxed text-neon text-glow sm:text-xs">
+                {project.title}
+              </h3>
+              <p className="flex-1 font-mono text-base leading-snug text-fg/70">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {project.stack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="border border-cyan/50 px-2 py-1 font-pixel text-[7px] text-cyan"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              {project.href.startsWith("http") && (
+                <span className="font-pixel text-[8px] text-neon/60 transition-colors group-hover:text-neon">
+                  &gt; VIEW_CODE
+                </span>
+              )}
+            </>
+          );
+
+          if (project.href.startsWith("http")) {
+            return (
+              <a
+                key={project.title}
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cardClass}
+              >
+                {content}
+              </a>
+            );
+          }
+
+          return (
+            <div key={project.title} className={cardClass}>
+              {content}
             </div>
-            <span className="font-pixel text-[8px] text-neon/60 transition-colors group-hover:text-neon">
-              &gt; VIEW_CODE
-            </span>
-          </a>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
