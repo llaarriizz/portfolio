@@ -21,7 +21,7 @@ export function About() {
 name     : Lawko
 role     : Backend Engineer
 location : Sulaymaniyah, Iraq
-status   : open to work
+status   : student and open to work
 
 I build the invisible parts —
 the APIs, the queues, the
