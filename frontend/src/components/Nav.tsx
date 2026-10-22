@@ -9,7 +9,7 @@ const LINKS = [
 export function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b-2 border-neon/40 bg-void/80 backdrop-blur-sm">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6">
+      <nav className="mx-auto flex max-w-5xl flex-col items-center gap-2 px-4 py-3 sm:flex-row sm:justify-between sm:gap-0 sm:px-6">
         <a
           href="#home"
           className="font-pixel text-[10px] text-neon text-glow sm:text-xs"
