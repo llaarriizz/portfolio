@@ -1,9 +1,9 @@
 import { Terminal } from "./Terminal";
 
 const LINKS = [
-  { label: "GITHUB", href: "https://github.com", color: "text-neon border-neon" },
-  { label: "LINKEDIN", href: "https://linkedin.com", color: "text-cyan border-cyan" },
-  { label: "EMAIL", href: "mailto:you@example.com", color: "text-magenta border-magenta" },
+  { label: "GITHUB", href: "https://github.com/llaarriizz", color: "text-neon border-neon" },
+  { label: "WHATSAPP", href: "https://wa.me/9647709207340", color: "text-cyan border-cyan" },
+  { label: "EMAIL", href: "mailto:lawkomohamad001@gmail.com", color: "text-magenta border-magenta" },
 ];
 
 export function Contact() {
