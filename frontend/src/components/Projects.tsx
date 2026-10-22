@@ -16,20 +16,20 @@ const PROJECTS: Project[] = [
     href: "https://github.com/llaarriizz/rebecca",
   },
   {
-    title: "REALTIME CHAT API",
-    tag: "MESSAGING",
+    title: "SCAN",
+    tag: "TOOL",
     description:
-      "WebSocket fan-out backend with presence tracking and horizontal scaling over Redis pub/sub.",
-    stack: ["Go", "Redis", "WebSocket"],
-    href: "#",
+      "Find the IPv4 address of a phone (or any device) on your local network — from the command line, with no app, no account, and no cloud service.",
+    stack: ["python", "CLI", "NETWORKING", "LIBRARIES"],
+    href: "https://github.com/llaarriizz/scan",
   },
   {
-    title: "ETL PIPELINE",
+    title: "GET_LATEST_TECH_NEWS",
     tag: "DATA",
     description:
-      "Streaming ingestion and transformation pipeline moving millions of events into a warehouse nightly.",
-    stack: ["Go", "ClickHouse", "Docker"],
-    href: "#",
+      "geting the xlm from a tech news website and printing it to your terminal",
+    stack: ["Go", "XML", "Terminal"],
+    href: "https://github.com/llaarriizz/get_latestTechNews",
   },
 ];
 
